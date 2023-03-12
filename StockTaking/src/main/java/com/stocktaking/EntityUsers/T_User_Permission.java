@@ -29,11 +29,9 @@ public class T_User_Permission
 	@Column(name = "Level")
 	private Integer level;
 
-	/*
-		Zona de Constructores
-	*/
 	public T_User_Permission() 
 	{
+		super();
 	}
 	
 	public T_User_Permission(T_User user, T_Permission permission, Integer level) {
@@ -52,9 +50,6 @@ public class T_User_Permission
 		this.level = level;
 	}
 
-	/*
-		Zona de Getters & Setters
-	*/
 	public EmbKey_User_Permission getId() {
 		return id;
 	}
@@ -87,10 +82,5 @@ public class T_User_Permission
 		this.level = level;
 	}
 	
-	public void setAll(EmbKey_User_Permission id, T_User user, T_Permission permission)
-	{
-		this.id = id;
-		this.user = user;
-		this.permission = permission;
-	}
+	
 }

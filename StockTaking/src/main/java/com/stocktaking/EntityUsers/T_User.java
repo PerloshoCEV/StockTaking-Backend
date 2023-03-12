@@ -24,61 +24,45 @@ public class T_User
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	private String name;
+	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "LastName", nullable = false)
-	private String lastName;
+	String lastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "SecondLastName", nullable = true)
-	private String secondLastName;
+	String secondLastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Email", nullable = false)
-	private String email;
+	String email;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Age", nullable = true)
-	private Integer age;
+	Integer age;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Password", nullable = false)
-	private String password;
+	String password;
 	
 	@ManyToOne()
 	@JsonBackReference
-	private T_Membership membership;
+	T_Membership membership;
 	
 	@OneToMany(mappedBy = "user")
-	private List<T_User_Permission> permissions = new ArrayList<>();
+	List<T_User_Permission> permissions = new ArrayList<>();
 
-	/*
-		Zona de Constructores
-	*/
-	public T_User() 
-	{
+	public T_User() {
 		super();
 	}
-	public T_User(String name, String lastName, String secondLastName, String email, Integer age,
-			String password) 
-	{
-		super();
-		this.name = name;
-		this.lastName = lastName;
-		this.secondLastName = secondLastName;
-		this.email = email;
-		this.age = age;
-		this.password = password;
-	}
-	
+
 	public T_User(Long id, String name, String lastName, String secondLastName, String email, Integer age,
-			String password) 
-	{
+			String password, T_Membership membership) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -87,74 +71,94 @@ public class T_User
 		this.email = email;
 		this.age = age;
 		this.password = password;
+		this.membership = membership;
 	}
-	
-	/*
-		Zona de Getters & Setters
-	*/
+
+	public T_User(Long id, String name, String lastName, String secondLastName, String email, Integer age,
+			String password, T_Membership membership, List<T_User_Permission> permissions) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.email = email;
+		this.age = age;
+		this.password = password;
+		this.membership = membership;
+		this.permissions = permissions;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getSecondLastName() {
 		return secondLastName;
 	}
+
 	public void setSecondLastName(String secondLastName) {
 		this.secondLastName = secondLastName;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Integer getAge() {
 		return age;
 	}
+
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public T_Membership getMembership() {
 		return membership;
 	}
+
 	public void setMembership(T_Membership membership) {
 		this.membership = membership;
 	}
+
 	public List<T_User_Permission> getPermissions() {
 		return permissions;
 	}
+
 	public void setPermissions(List<T_User_Permission> permissions) {
 		this.permissions = permissions;
 	}
 	
-	public void setAll(String name, String lastName, String secondLastName, String email, Integer age, String password)
-	{
-		this.name = name;
-		this.lastName = lastName;
-		this.secondLastName = secondLastName;
-		this.email = email;
-		this.age = age;
-		this.password = password;
-	}
 	
 }

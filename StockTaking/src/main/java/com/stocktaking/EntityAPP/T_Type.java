@@ -22,49 +22,44 @@ public class T_Type
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	private String name;
+	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Description", nullable = false)
-	private String description;
+	String description;
 	
 	@OneToMany(mappedBy = "type")
 	@JsonManagedReference
-	private List<T_Product> products;
+	List<T_Product> products;
 	
 	@OneToMany(mappedBy = "type")
-	private List<T_Type_Attribute> attributes = new ArrayList<>();
+	List<T_Type_Attribute> attributes = new ArrayList<>();
 
-	/*
-		Zona de Constructores
-	*/
-	public T_Type() 
-	{
+	public T_Type() {
 		super();
 	}
-	
-	public T_Type(String name, String description) 
-	{
-		super();
-		this.name = name;
-		this.description = description;
-	}
-	
-	public T_Type(Long id, String name, String description) 
-	{
+
+	public T_Type(Long id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
 
-	/*
-		Zona de Getters & Setters
-	*/
+	public T_Type(Long id, String name, String description, List<T_Product> products,
+			List<T_Type_Attribute> attributes) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.products = products;
+		this.attributes = attributes;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -105,10 +100,5 @@ public class T_Type
 		this.attributes = attributes;
 	}
 	
-	public void setAll(String name, String description)
-	{
-		this.name = name;
-		this.description = description;
-	}
 	
 }

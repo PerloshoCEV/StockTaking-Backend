@@ -25,9 +25,6 @@ public class T_Product_Client
 	@MapsId("clientId")
 	private T_Client client;
 
-	/*
-		Zona de Constructores
-	*/
 	public T_Product_Client() 
 	{
 		super();
@@ -48,9 +45,6 @@ public class T_Product_Client
 		this.client = client;
 	}
 
-	/*
-		Zona de Getters & Setters
-	*/
 	public EmbKey_Product_Client getId() {
 		return id;
 	}
@@ -75,10 +69,5 @@ public class T_Product_Client
 		this.client = client;
 	}
 	
-	public void setAll(T_Product product, T_Client client)
-	{
-		this.product = product;
-		this.client = client;
-	}
 	
 }

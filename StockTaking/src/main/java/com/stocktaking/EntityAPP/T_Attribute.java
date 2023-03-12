@@ -20,38 +20,31 @@ public class T_Attribute
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	private String name;
+	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Description", nullable = false)
-	private String description;
+	String description;
 	
 	@OneToMany(mappedBy = "attribute")
-	private List<T_Type_Attribute> types = new ArrayList<>();
+	List<T_Type_Attribute> types = new ArrayList<>();
 
-	
-	/*
-		Zona de Constructores
-	*/
-	public T_Attribute() 
-	{
+	public T_Attribute() {
 		super();
 	}
 	
-	public T_Attribute(String name, String description, List<T_Type_Attribute> types) 
-	{
+	public T_Attribute(Long id, String name, String description) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.types = types;
 	}
 	
-	public T_Attribute(Long id, String name, String description, List<T_Type_Attribute> types) 
-	{
+	public T_Attribute(Long id, String name, String description, List<T_Type_Attribute> types) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -59,10 +52,6 @@ public class T_Attribute
 		this.types = types;
 	}
 
-	
-	/*
-		Zona de Getters & Setters
-	*/
 	public Long getId() {
 		return id;
 	}
@@ -94,4 +83,6 @@ public class T_Attribute
 	public void setTypes(List<T_Type_Attribute> types) {
 		this.types = types;
 	}
+	
+	
 }

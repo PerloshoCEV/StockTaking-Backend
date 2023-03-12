@@ -23,95 +23,96 @@ public class T_Product
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	private String name;
+	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Stock", nullable = false)
-	private Integer stock;
+	Integer Stock;
 	
 	@ManyToOne()
 	@JsonBackReference
-	private T_Type type;
+	T_Type type;
 	
 	@OneToMany(mappedBy = "product")
-	private List<T_Product_Client> clients = new ArrayList<>();
+	List<T_Product_Client> clients = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "product")
-	private List<T_Product_Supplier> suppliers = new ArrayList<>();
+	List<T_Product_Supplier> suppliers = new ArrayList<>();
 
-	/*
-		Zona de Constructores
-	*/
-	public T_Product() 
-	{
+	public T_Product() {
 		super();
 	}
-	
-	public T_Product(String name, Integer stock, T_Type type) 
-	{
-		super();
-		this.name = name;
-		this.stock = stock;
-		this.type = type;
-	}
-	
-	public T_Product(Long id, String name, Integer stock, T_Type type) 
-	{
+
+	public T_Product(Long id, String name, Integer stock, T_Type type) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.stock = stock;
+		Stock = stock;
 		this.type = type;
 	}
-	
-	/*
-		Zona de Getters & Setters
-	*/
+
+	public T_Product(Long id, String name, Integer stock, T_Type type, List<T_Product_Client> clients,
+			List<T_Product_Supplier> suppliers) {
+		super();
+		this.id = id;
+		this.name = name;
+		Stock = stock;
+		this.type = type;
+		this.clients = clients;
+		this.suppliers = suppliers;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public Integer getStock() {
-		return this.stock;
+		return Stock;
 	}
+
 	public void setStock(Integer stock) {
-		this.stock = stock;
+		Stock = stock;
 	}
+
 	public T_Type getType() {
 		return type;
 	}
+
 	public void setType(T_Type type) {
 		this.type = type;
 	}
+
 	public List<T_Product_Client> getClients() {
 		return clients;
 	}
+
 	public void setClients(List<T_Product_Client> clients) {
 		this.clients = clients;
 	}
+
 	public List<T_Product_Supplier> getSuppliers() {
 		return suppliers;
 	}
+
 	public void setSuppliers(List<T_Product_Supplier> suppliers) {
 		this.suppliers = suppliers;
 	}
 	
-	public void setAll(String name, Integer stock, T_Type type)
-	{
-		this.name = name;
-		this.stock = stock;
-		this.type = type;
-	}
+	
 }

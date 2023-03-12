@@ -37,32 +37,25 @@ public class T_Permission
 	@OneToMany(mappedBy = "permission", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<T_User_Permission> users = new ArrayList<>();
 
-	/*
-		Zona de Constructores
-	*/
-	public T_Permission() 
-	{
+	public T_Permission() {
 		super();
 	}
-	
-	public T_Permission(String name, String description) 
-	{
-		super();
-		this.name = name;
-		this.description = description;
-	}
-	
-	public T_Permission(Long id, String name, String description) 
-	{
+
+	public T_Permission(Long id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
 
-	/*
-		Zona de Getters & Setters
-	*/
+	public T_Permission(Long id, String name, String description, List<T_User_Permission> users) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.users = users;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -95,9 +88,4 @@ public class T_Permission
 		this.users = users;
 	}
 	
-	public void setAll(String name, String description)
-	{
-		this.name = name;
-		this.description = description;
-	}
 }

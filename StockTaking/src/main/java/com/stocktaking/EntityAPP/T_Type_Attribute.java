@@ -25,11 +25,7 @@ public class T_Type_Attribute
 	@MapsId("attributeId")
 	private T_Attribute attribute;
 
-	/*
-		Zona de Constructores
-	*/
-	public T_Type_Attribute() 
-	{
+	public T_Type_Attribute() {
 		super();
 	}
 	
@@ -48,9 +44,6 @@ public class T_Type_Attribute
 		this.attribute = attribute;
 	}
 
-	/*
-		Zona de Getters & Setters
-	*/
 	public EmbKey_Type_Attribute getId() {
 		return id;
 	}
@@ -74,10 +67,8 @@ public class T_Type_Attribute
 	public void setAttribute(T_Attribute attribute) {
 		this.attribute = attribute;
 	}
+
 	
-	public void setAll(T_Type type, T_Attribute attribute)
-	{
-		this.type = type;
-		this.attribute = attribute;
-	}
+	
+	
 }
