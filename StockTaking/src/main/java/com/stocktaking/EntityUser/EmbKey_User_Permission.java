@@ -1,4 +1,4 @@
-package com.stocktaking.EntityUsers;
+package com.stocktaking.EntityUser;
 
 import java.io.Serializable;
 import java.util.Objects;

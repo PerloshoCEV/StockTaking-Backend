@@ -1,4 +1,4 @@
-package com.stocktaking.EntityUsers;
+package com.stocktaking.EntityUser;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;

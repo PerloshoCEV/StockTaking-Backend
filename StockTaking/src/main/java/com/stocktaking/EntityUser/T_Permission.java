@@ -1,4 +1,4 @@
-package com.stocktaking.EntityUsers;
+package com.stocktaking.EntityUser;
 
 
 
