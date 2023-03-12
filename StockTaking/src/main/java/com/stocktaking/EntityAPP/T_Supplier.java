@@ -41,10 +41,21 @@ public class T_Supplier
 	@OneToMany(mappedBy = "supplier")
 	List<T_Product_Supplier> products = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Supplier() {
 		super();
 	}
 
+	public T_Supplier(String name, String email, String address, String description) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.description = description;
+	}
+	
 	public T_Supplier(Long id, String name, String email, String address, String description) {
 		super();
 		this.id = id;
@@ -65,6 +76,9 @@ public class T_Supplier
 		this.products = products;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

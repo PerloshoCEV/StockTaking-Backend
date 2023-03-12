@@ -41,9 +41,21 @@ public class T_Client
 	@OneToMany(mappedBy = "client")
 	List<T_Product_Client> products = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Client() {
 		super();
 	}
+	
+	public T_Client(String name, String lastName, String secondLastName, String age) {
+		super();
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.age = age;
+	}
+	
 	public T_Client(Long id, String name, String lastName, String secondLastName, String age) {
 		super();
 		this.id = id;
@@ -62,6 +74,10 @@ public class T_Client
 		this.age = age;
 		this.products = products;
 	}
+	
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

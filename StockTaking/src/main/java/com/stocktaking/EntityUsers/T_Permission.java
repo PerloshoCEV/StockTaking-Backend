@@ -37,10 +37,19 @@ public class T_Permission
 	@OneToMany(mappedBy = "permission", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<T_User_Permission> users = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Permission() {
 		super();
 	}
 
+	public T_Permission(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
 	public T_Permission(Long id, String name, String description) {
 		super();
 		this.id = id;
@@ -56,6 +65,9 @@ public class T_Permission
 		this.users = users;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

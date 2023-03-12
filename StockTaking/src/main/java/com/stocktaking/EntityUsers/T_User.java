@@ -57,6 +57,9 @@ public class T_User
 	@OneToMany(mappedBy = "user")
 	List<T_User_Permission> permissions = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_User() {
 		super();
 	}
@@ -88,6 +91,9 @@ public class T_User
 		this.permissions = permissions;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

@@ -31,7 +31,7 @@ public class T_Product
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Stock", nullable = false)
-	Integer Stock;
+	Integer stock;
 	
 	@ManyToOne()
 	@JsonBackReference
@@ -43,15 +43,25 @@ public class T_Product
 	@OneToMany(mappedBy = "product")
 	List<T_Product_Supplier> suppliers = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Product() {
 		super();
 	}
 
+	public T_Product(String name, Integer stock, T_Type type) {
+		super();
+		this.name = name;
+		this.stock = stock;
+		this.type = type;
+	}
+	
 	public T_Product(Long id, String name, Integer stock, T_Type type) {
 		super();
 		this.id = id;
 		this.name = name;
-		Stock = stock;
+		this.stock = stock;
 		this.type = type;
 	}
 
@@ -60,12 +70,15 @@ public class T_Product
 		super();
 		this.id = id;
 		this.name = name;
-		Stock = stock;
+		this.stock = stock;
 		this.type = type;
 		this.clients = clients;
 		this.suppliers = suppliers;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}
@@ -83,11 +96,11 @@ public class T_Product
 	}
 
 	public Integer getStock() {
-		return Stock;
+		return this.stock;
 	}
 
 	public void setStock(Integer stock) {
-		Stock = stock;
+		this.stock = stock;
 	}
 
 	public T_Type getType() {

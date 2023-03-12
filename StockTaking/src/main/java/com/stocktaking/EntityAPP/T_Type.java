@@ -39,10 +39,19 @@ public class T_Type
 	@OneToMany(mappedBy = "type")
 	List<T_Type_Attribute> attributes = new ArrayList<>();
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Type() {
 		super();
 	}
 
+	public T_Type(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
 	public T_Type(Long id, String name, String description) {
 		super();
 		this.id = id;
@@ -60,6 +69,9 @@ public class T_Type
 		this.attributes = attributes;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

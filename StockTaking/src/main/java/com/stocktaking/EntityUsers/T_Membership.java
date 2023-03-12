@@ -35,10 +35,19 @@ public class T_Membership
 	@JsonManagedReference
 	List<T_User> users;
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Membership() {
 		super();
 	}
 
+	public T_Membership(String name, Double price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+	
 	public T_Membership(Long id, String name, Double price) {
 		super();
 		this.id = id;
@@ -54,6 +63,9 @@ public class T_Membership
 		this.users = users;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getId() {
 		return id;
 	}

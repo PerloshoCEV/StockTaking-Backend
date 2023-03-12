@@ -25,6 +25,9 @@ public class T_Product_Supplier
 	@MapsId("supplierId")
 	private T_Supplier supplier;
 
+	/*
+		Zona de Constructores
+	*/
 	public T_Product_Supplier() {
 		super();
 	}
@@ -44,6 +47,9 @@ public class T_Product_Supplier
 		this.supplier = supplier;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public EmbKey_Product_Supplier getId() {
 		return id;
 	}
