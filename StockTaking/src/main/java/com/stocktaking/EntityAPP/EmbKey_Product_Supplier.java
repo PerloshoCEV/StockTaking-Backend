@@ -11,12 +11,18 @@ public class EmbKey_Product_Supplier  implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
+	/*
+		Zona de Identificadores
+	*/
 	@Column (name = "Product_ID")
 	private Long productId;
 	
 	@Column (name = "Supplier_ID")
 	private Long supplierId;
 
+	/*
+		Zona de Constructores
+	*/
 	public EmbKey_Product_Supplier() 
 	{
 	}
@@ -28,6 +34,9 @@ public class EmbKey_Product_Supplier  implements Serializable
 		this.supplierId = supplierId;
 	}
 
+	/*
+		Zona de Getters & Setters
+	*/
 	public Long getProductId() {
 		return productId;
 	}
@@ -50,8 +59,12 @@ public class EmbKey_Product_Supplier  implements Serializable
 		this.supplierId = supplierId;
 	}
 	
+	/*
+		Zona de Métodos a implementar
+	*/
 	@Override
-    public boolean equals(Object other) {
+    public boolean equals(Object other) 
+	{
         if (this == other) 
     	{
         	return true;

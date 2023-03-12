@@ -25,6 +25,14 @@ public class T_Product_Supplier
 	@MapsId("supplierId")
 	private T_Supplier supplier;
 
+	/*
+		Zona de Constructores
+	*/
+	public T_Product_Supplier() 
+	{
+		super();
+	}
+	
 	public T_Product_Supplier(T_Product product, T_Supplier supplier) 
 	{
 		super();
@@ -37,6 +45,33 @@ public class T_Product_Supplier
 		super();
 		this.id = id;
 		this.product = product;
+		this.supplier = supplier;
+	}
+
+	/*
+		Zona de Getters & Setters
+	*/
+	public EmbKey_Product_Supplier getId() {
+		return id;
+	}
+
+	public void setId(EmbKey_Product_Supplier id) {
+		this.id = id;
+	}
+
+	public T_Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(T_Product product) {
+		this.product = product;
+	}
+
+	public T_Supplier getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(T_Supplier supplier) {
 		this.supplier = supplier;
 	}
 	

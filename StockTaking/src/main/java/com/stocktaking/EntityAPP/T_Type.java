@@ -22,20 +22,93 @@ public class T_Type
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	String name;
+	private String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Description", nullable = false)
-	String description;
+	private String description;
 	
 	@OneToMany(mappedBy = "type")
 	@JsonManagedReference
-	List<T_Product> products;
+	private List<T_Product> products;
 	
 	@OneToMany(mappedBy = "type")
-	List<T_Type_Attribute> attributes = new ArrayList<>();
+	private List<T_Type_Attribute> attributes = new ArrayList<>();
+
+	/*
+		Zona de Constructores
+	*/
+	public T_Type() 
+	{
+		super();
+	}
+	
+	public T_Type(String name, String description) 
+	{
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
+	public T_Type(Long id, String name, String description) 
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+	}
+
+	/*
+		Zona de Getters & Setters
+	*/
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<T_Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<T_Product> products) {
+		this.products = products;
+	}
+
+	public List<T_Type_Attribute> getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(List<T_Type_Attribute> attributes) {
+		this.attributes = attributes;
+	}
+	
+	public void setAll(String name, String description)
+	{
+		this.name = name;
+		this.description = description;
+	}
+	
 }

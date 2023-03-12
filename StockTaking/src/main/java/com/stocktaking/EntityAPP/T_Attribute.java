@@ -20,16 +20,78 @@ public class T_Attribute
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	String name;
+	private String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Description", nullable = false)
-	String description;
+	private String description;
 	
 	@OneToMany(mappedBy = "attribute")
-	List<T_Type_Attribute> types = new ArrayList<>();
+	private List<T_Type_Attribute> types = new ArrayList<>();
+
+	
+	/*
+		Zona de Constructores
+	*/
+	public T_Attribute() 
+	{
+		super();
+	}
+	
+	public T_Attribute(String name, String description, List<T_Type_Attribute> types) 
+	{
+		super();
+		this.name = name;
+		this.description = description;
+		this.types = types;
+	}
+	
+	public T_Attribute(Long id, String name, String description, List<T_Type_Attribute> types) 
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.types = types;
+	}
+
+	
+	/*
+		Zona de Getters & Setters
+	*/
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<T_Type_Attribute> getTypes() {
+		return types;
+	}
+
+	public void setTypes(List<T_Type_Attribute> types) {
+		this.types = types;
+	}
 }

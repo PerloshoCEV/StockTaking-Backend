@@ -21,17 +21,85 @@ public class T_Membership
 	*/
 	@Id // Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable java será el Atributo / Campo clave de la entidad.
 	@GeneratedValue(strategy = GenerationType.SEQUENCE) // Spring JPA le dice al Gestor de Bases de Datos que el Atributo será autogenerado.
-	Long id; // Variable - Atributo / Campo -> id (Primary Key).
+	private Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Name", nullable = false)
-	String name;
+	private String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
 	@Column (name = "Price", nullable = false)
-	Double price;
+	private Double price;
 	
 	@OneToMany(mappedBy = "membership")
 	@JsonManagedReference
-	List<T_User> users;
+	private List<T_User> users;
+
+	/*
+		Zona de Constructores
+	*/
+	public T_Membership() 
+	{
+		super();
+	}
+	
+	public T_Membership(String name, Double price, List<T_User> users) 
+	{
+		super();
+		this.name = name;
+		this.price = price;
+		this.users = users;
+	}
+	
+	public T_Membership(Long id, String name, Double price, List<T_User> users) 
+	{
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.users = users;
+	}
+
+	/*
+		Zona de Getters & Setters
+	*/
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public List<T_User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<T_User> users) {
+		this.users = users;
+	}
+	
+	public void setAll(String name, Double price)
+	{
+		this.name = name;
+		this.price = price;
+	}
+	
+	
 }

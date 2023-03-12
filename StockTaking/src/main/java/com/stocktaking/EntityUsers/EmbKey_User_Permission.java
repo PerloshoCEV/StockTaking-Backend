@@ -63,7 +63,9 @@ public class EmbKey_User_Permission implements Serializable
 		this.permissionId = permissionId;
 	}
 	
-	
+	/*
+		Zona de Métodos a implementar
+	*/
 	@Override
     public boolean equals(Object other) {
         if (this == other) 

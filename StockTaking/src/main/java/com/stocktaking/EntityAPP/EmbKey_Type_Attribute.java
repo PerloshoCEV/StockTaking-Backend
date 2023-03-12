@@ -12,12 +12,18 @@ public class EmbKey_Type_Attribute implements Serializable
 {
 	private static final long serialVersionUID = 1L;
 	
+	/*
+		Zona de Identificadores
+	*/
 	@Column (name = "Type_ID")
 	private Long typeId;
 	
 	@Column (name = "Attribute_ID")
 	private Long attributeId;
 
+	/*
+		Zona de Constructores
+	*/
 	public EmbKey_Type_Attribute() 
 	{
 	}
@@ -52,8 +58,12 @@ public class EmbKey_Type_Attribute implements Serializable
 		this.attributeId = attributeId;
 	}
 	
+	/*
+		Zona de Métodos a implementar
+	*/
 	@Override
-    public boolean equals(Object other) {
+    public boolean equals(Object other) 
+	{
         if (this == other) 
     	{
         	return true;
