@@ -27,6 +27,7 @@ public class T_Product_Client
 
 	public T_Product_Client() 
 	{
+		super();
 	}
 	
 	public T_Product_Client(T_Product product, T_Client client) 
@@ -41,6 +42,30 @@ public class T_Product_Client
 		super();
 		this.id = id;
 		this.product = product;
+		this.client = client;
+	}
+
+	public EmbKey_Product_Client getId() {
+		return id;
+	}
+
+	public void setId(EmbKey_Product_Client id) {
+		this.id = id;
+	}
+
+	public T_Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(T_Product product) {
+		this.product = product;
+	}
+
+	public T_Client getClient() {
+		return client;
+	}
+
+	public void setClient(T_Client client) {
 		this.client = client;
 	}
 	

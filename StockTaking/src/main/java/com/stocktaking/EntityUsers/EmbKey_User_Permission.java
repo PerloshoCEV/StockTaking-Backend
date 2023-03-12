@@ -23,6 +23,7 @@ public class EmbKey_User_Permission implements Serializable
 	// Constructor Vacío ()
 	public EmbKey_User_Permission() 
 	{
+		super();
 	}
 
 	// Constructor completo ()

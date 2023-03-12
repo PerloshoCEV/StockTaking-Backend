@@ -40,4 +40,64 @@ public class T_Client
 	
 	@OneToMany(mappedBy = "client")
 	List<T_Product_Client> products = new ArrayList<>();
+
+	public T_Client() {
+		super();
+	}
+	public T_Client(Long id, String name, String lastName, String secondLastName, String age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.age = age;
+	}
+	public T_Client(Long id, String name, String lastName, String secondLastName, String age,
+			List<T_Product_Client> products) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.age = age;
+		this.products = products;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getSecondLastName() {
+		return secondLastName;
+	}
+	public void setSecondLastName(String secondLastName) {
+		this.secondLastName = secondLastName;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public List<T_Product_Client> getProducts() {
+		return products;
+	}
+	public void setProducts(List<T_Product_Client> products) {
+		this.products = products;
+	}
+	
+	
 }

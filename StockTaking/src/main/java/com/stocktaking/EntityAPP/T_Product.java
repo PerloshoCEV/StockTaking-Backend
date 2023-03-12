@@ -42,4 +42,77 @@ public class T_Product
 	
 	@OneToMany(mappedBy = "product")
 	List<T_Product_Supplier> suppliers = new ArrayList<>();
+
+	public T_Product() {
+		super();
+	}
+
+	public T_Product(Long id, String name, Integer stock, T_Type type) {
+		super();
+		this.id = id;
+		this.name = name;
+		Stock = stock;
+		this.type = type;
+	}
+
+	public T_Product(Long id, String name, Integer stock, T_Type type, List<T_Product_Client> clients,
+			List<T_Product_Supplier> suppliers) {
+		super();
+		this.id = id;
+		this.name = name;
+		Stock = stock;
+		this.type = type;
+		this.clients = clients;
+		this.suppliers = suppliers;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getStock() {
+		return Stock;
+	}
+
+	public void setStock(Integer stock) {
+		Stock = stock;
+	}
+
+	public T_Type getType() {
+		return type;
+	}
+
+	public void setType(T_Type type) {
+		this.type = type;
+	}
+
+	public List<T_Product_Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(List<T_Product_Client> clients) {
+		this.clients = clients;
+	}
+
+	public List<T_Product_Supplier> getSuppliers() {
+		return suppliers;
+	}
+
+	public void setSuppliers(List<T_Product_Supplier> suppliers) {
+		this.suppliers = suppliers;
+	}
+	
+	
 }

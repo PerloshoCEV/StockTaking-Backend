@@ -31,6 +31,7 @@ public class T_User_Permission
 
 	public T_User_Permission() 
 	{
+		super();
 	}
 	
 	public T_User_Permission(T_User user, T_Permission permission, Integer level) {
@@ -46,6 +47,38 @@ public class T_User_Permission
 		this.id = id;
 		this.user = user;
 		this.permission = permission;
+		this.level = level;
+	}
+
+	public EmbKey_User_Permission getId() {
+		return id;
+	}
+
+	public void setId(EmbKey_User_Permission id) {
+		this.id = id;
+	}
+
+	public T_User getUser() {
+		return user;
+	}
+
+	public void setUser(T_User user) {
+		this.user = user;
+	}
+
+	public T_Permission getPermission() {
+		return permission;
+	}
+
+	public void setPermission(T_Permission permission) {
+		this.permission = permission;
+	}
+
+	public Integer getLevel() {
+		return level;
+	}
+
+	public void setLevel(Integer level) {
 		this.level = level;
 	}
 	

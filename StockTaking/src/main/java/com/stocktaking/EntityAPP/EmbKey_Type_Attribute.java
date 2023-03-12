@@ -20,6 +20,7 @@ public class EmbKey_Type_Attribute implements Serializable
 
 	public EmbKey_Type_Attribute() 
 	{
+		super();
 	}
 
 	public EmbKey_Type_Attribute(Long typeId, Long attributeId) 

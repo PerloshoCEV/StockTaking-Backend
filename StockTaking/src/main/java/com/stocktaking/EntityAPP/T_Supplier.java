@@ -40,4 +40,78 @@ public class T_Supplier
 	
 	@OneToMany(mappedBy = "supplier")
 	List<T_Product_Supplier> products = new ArrayList<>();
+
+	public T_Supplier() {
+		super();
+	}
+
+	public T_Supplier(Long id, String name, String email, String address, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.description = description;
+	}
+
+	public T_Supplier(Long id, String name, String email, String address, String description,
+			List<T_Product_Supplier> products) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.description = description;
+		this.products = products;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<T_Product_Supplier> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<T_Product_Supplier> products) {
+		this.products = products;
+	}
+	
+	
 }

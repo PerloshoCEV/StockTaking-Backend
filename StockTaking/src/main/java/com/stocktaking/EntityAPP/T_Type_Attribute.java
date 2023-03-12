@@ -25,6 +25,10 @@ public class T_Type_Attribute
 	@MapsId("attributeId")
 	private T_Attribute attribute;
 
+	public T_Type_Attribute() {
+		super();
+	}
+	
 	public T_Type_Attribute(T_Type type, T_Attribute attribute) 
 	{
 		super();
@@ -39,6 +43,32 @@ public class T_Type_Attribute
 		this.type = type;
 		this.attribute = attribute;
 	}
+
+	public EmbKey_Type_Attribute getId() {
+		return id;
+	}
+
+	public void setId(EmbKey_Type_Attribute id) {
+		this.id = id;
+	}
+
+	public T_Type getType() {
+		return type;
+	}
+
+	public void setType(T_Type type) {
+		this.type = type;
+	}
+
+	public T_Attribute getAttribute() {
+		return attribute;
+	}
+
+	public void setAttribute(T_Attribute attribute) {
+		this.attribute = attribute;
+	}
+
+	
 	
 	
 }

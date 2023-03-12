@@ -19,6 +19,7 @@ public class EmbKey_Product_Supplier  implements Serializable
 
 	public EmbKey_Product_Supplier() 
 	{
+		super();
 	}
 	
 	public EmbKey_Product_Supplier(Long productId, Long supplierId) 

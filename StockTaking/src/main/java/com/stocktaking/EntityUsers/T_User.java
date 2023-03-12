@@ -56,4 +56,109 @@ public class T_User
 	
 	@OneToMany(mappedBy = "user")
 	List<T_User_Permission> permissions = new ArrayList<>();
+
+	public T_User() {
+		super();
+	}
+
+	public T_User(Long id, String name, String lastName, String secondLastName, String email, Integer age,
+			String password, T_Membership membership) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.email = email;
+		this.age = age;
+		this.password = password;
+		this.membership = membership;
+	}
+
+	public T_User(Long id, String name, String lastName, String secondLastName, String email, Integer age,
+			String password, T_Membership membership, List<T_User_Permission> permissions) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastName = lastName;
+		this.secondLastName = secondLastName;
+		this.email = email;
+		this.age = age;
+		this.password = password;
+		this.membership = membership;
+		this.permissions = permissions;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getSecondLastName() {
+		return secondLastName;
+	}
+
+	public void setSecondLastName(String secondLastName) {
+		this.secondLastName = secondLastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public T_Membership getMembership() {
+		return membership;
+	}
+
+	public void setMembership(T_Membership membership) {
+		this.membership = membership;
+	}
+
+	public List<T_User_Permission> getPermissions() {
+		return permissions;
+	}
+
+	public void setPermissions(List<T_User_Permission> permissions) {
+		this.permissions = permissions;
+	}
+	
+	
 }
