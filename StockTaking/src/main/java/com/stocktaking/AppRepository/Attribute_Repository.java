@@ -1,5 +1,5 @@
 package com.stocktaking.AppRepository;
 
-public interface Type_Interface {
+public interface Attribute_Repository {
 
 }

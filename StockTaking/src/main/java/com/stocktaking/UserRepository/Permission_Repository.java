@@ -1,5 +1,5 @@
 package com.stocktaking.UserRepository;
 
-public interface Permission_Interface {
+public interface Permission_Repository {
 
 }

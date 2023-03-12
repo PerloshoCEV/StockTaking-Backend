@@ -1,5 +1,5 @@
 package com.stocktaking.AppRepository;
 
-public interface Supplier_Interface {
+public interface Supplier_Repository {
 
 }
