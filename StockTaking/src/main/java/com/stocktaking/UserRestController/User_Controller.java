@@ -102,6 +102,4 @@ public class User_Controller implements User_ControllerInterface
 		}
 		return stringToReturn;
 	}
-	
-	
 }

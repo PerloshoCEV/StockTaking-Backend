@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stocktaking.UserEntity.T_User;
 
-//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-//@RequestMapping("/stocktaking")
+@RequestMapping("/stocktaking")
 public interface User_ControllerInterface 
 {
 	/*

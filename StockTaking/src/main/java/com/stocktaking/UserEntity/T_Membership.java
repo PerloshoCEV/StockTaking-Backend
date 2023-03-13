@@ -97,6 +97,12 @@ public class T_Membership
 	public void setUsers(List<T_User> users) {
 		this.users = users;
 	}
+
+	public void setAll(String newName, Double newPrice) 
+	{
+		this.name = newName;
+		this.price = newPrice;
+	}
 	
 	
 }
