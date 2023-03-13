@@ -61,5 +61,5 @@ public interface Permission_ControllerInterface
 		Devuelve:
 	*/
 	@DeleteMapping(path = "/permission/{id}")
-	String deletePermissionId (@RequestParam Long id);
+	String deletePermissionId (@PathVariable Long id);
 }

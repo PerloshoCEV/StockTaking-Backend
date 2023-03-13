@@ -91,11 +91,11 @@ public class Permission_Controller implements Permission_ControllerInterface
 			if (permissionService.findPermissionByIdService(id).isPresent())
 			{
 				permissionService.deletePermissionId(id);
-				stringToReturn = "Usuario eliminado correctamente";
+				stringToReturn = "Permiso eliminado correctamente";
 			}
 			else
 			{
-				stringToReturn = "Usuario con ID " + id + " no existe";
+				stringToReturn = "Permiso con ID " + id + " no existe";
 			}
 		}
 		else

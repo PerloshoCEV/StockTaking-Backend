@@ -91,11 +91,11 @@ public class Membership_Controller implements Membership_ControllerInterface
 			if (membershipService.findMembershipByIdService(id).isPresent())
 			{
 				membershipService.deleteMembershipId(id);
-				stringToReturn = "Usuario eliminado correctamente";
+				stringToReturn = "Membresía eliminada correctamente";
 			}
 			else
 			{
-				stringToReturn = "Usuario con ID " + id + " no existe";
+				stringToReturn = "Membresía con ID " + id + " no existe";
 			}
 		}
 		else

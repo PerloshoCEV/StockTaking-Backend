@@ -61,5 +61,5 @@ public interface User_ControllerInterface
 		Devuelve:
 	*/
 	@DeleteMapping(path = "/user/{id}")
-	String deleteUserId (@RequestParam Long id); 
+	String deleteUserId (@PathVariable Long id); 
 }

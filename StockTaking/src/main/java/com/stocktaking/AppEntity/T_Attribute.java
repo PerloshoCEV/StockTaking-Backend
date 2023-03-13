@@ -95,6 +95,12 @@ public class T_Attribute
 	public void setTypes(List<T_Type_Attribute> types) {
 		this.types = types;
 	}
+
+	public void setAll(String newName, String newDescription) 
+	{
+		this.name = newName;
+		this.description = newDescription;
+	}
 	
 	
 }

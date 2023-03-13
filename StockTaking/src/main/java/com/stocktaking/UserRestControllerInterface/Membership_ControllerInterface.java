@@ -60,5 +60,5 @@ public interface Membership_ControllerInterface
 		Devuelve:
 	*/
 	@DeleteMapping(path = "/membership/{id}")
-	String deleteMembershipId (@RequestParam Long id); 
+	String deleteMembershipId (@PathVariable Long id); 
 }
