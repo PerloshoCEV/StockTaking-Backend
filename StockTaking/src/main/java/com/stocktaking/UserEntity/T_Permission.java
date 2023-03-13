@@ -99,5 +99,11 @@ public class T_Permission
 	public void setUsers(List<T_User_Permission> users) {
 		this.users = users;
 	}
+
+	public void setAll(String newName, String newDescription) 
+	{
+		this.name = newName;
+		this.description = newDescription;
+	}
 	
 }
