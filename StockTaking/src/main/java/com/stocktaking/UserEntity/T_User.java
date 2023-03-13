@@ -165,6 +165,27 @@ public class T_User
 	public void setPermissions(List<T_User_Permission> permissions) {
 		this.permissions = permissions;
 	}
+
+	public void setAll
+	(
+		String newName, 
+		String newLastName, 
+		String newSecondLastName, 
+		String newEmail, 
+		Integer newAge,
+		String newPassword, 
+		T_Membership newMembership
+	) 
+	{
+		this.name = newName;
+		this.lastName = newLastName;
+		this.secondLastName = newSecondLastName;
+		this.email = newEmail;
+		this.age = newAge;
+		this.password = newPassword;
+		this.membership = newMembership;
+		
+	}
 	
 	
 }
