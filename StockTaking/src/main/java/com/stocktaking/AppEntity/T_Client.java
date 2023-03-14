@@ -114,6 +114,12 @@ public class T_Client
 	public void setProducts(List<T_Product_Client> products) {
 		this.products = products;
 	}
+
+	public void setAll(String name, String lastName) {
+		
+		this.name = name;
+		this.lastName = lastName;
+	}
 	
 	
 }
