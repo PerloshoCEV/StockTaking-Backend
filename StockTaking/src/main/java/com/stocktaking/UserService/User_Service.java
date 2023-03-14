@@ -66,4 +66,8 @@ public class User_Service
 		return repository.findByEmail(email);
 	}
 
+	public Optional<T_User> findUserByEmailPasswordService(String email, String password) {
+		return repository.findByEmailAndPassword(email, password);
+	}
+
 }

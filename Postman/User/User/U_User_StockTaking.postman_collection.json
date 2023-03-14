@@ -35,6 +35,37 @@
 			"response": []
 		},
 		{
+			"name": "GetUserByEmailPassword",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"andres_hernan_segovia_m-tsapp1oa2122@cev.com\",\r\n    \"password\": \"andres\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/stocktaking/userEmailPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocktaking",
+						"userEmailPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "ReadAllUser",
 			"request": {
 				"method": "GET",

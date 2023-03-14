@@ -51,8 +51,8 @@ public interface User_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@GetMapping(path = "/userNamePassword")
-	T_User readUserNamePasswordController (@RequestBody T_User newUser);
+	@GetMapping(path = "/userEmailPassword")
+	T_User readUserEmailPasswordController (@RequestBody T_User newUser);
 	
 	/*
 		Método interfaz: Put Update
