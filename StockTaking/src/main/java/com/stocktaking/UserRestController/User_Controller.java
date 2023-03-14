@@ -1,6 +1,7 @@
 package com.stocktaking.UserRestController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -59,6 +60,36 @@ public class User_Controller implements User_ControllerInterface
 		if(userService.findUserByIdService(id).isPresent())
 		{
 			userToReturn = userService.findUserByIdService(id).get();
+		}
+		else
+		{
+			
+		}
+		return userToReturn;
+	}
+	
+	@Override
+	public T_User readUserNamePasswordController(T_User newUser) 
+	{
+		T_User userToReturn = null;
+		if
+		(
+			(newUser.getEmail() != "" || newUser.getEmail() != null)
+			&&
+			(newUser.getPassword() != "" || newUser.getPassword() != null)
+		)
+		{
+			Optional<T_User> userExist = null;
+			userExist = userService.findUserByEmailService(newUser.getEmail());
+			if(userExist.isPresent())
+			{
+				userToReturn = userExist.get();
+			}
+			else
+			{
+				//Lanzar error
+			}
+			
 		}
 		else
 		{

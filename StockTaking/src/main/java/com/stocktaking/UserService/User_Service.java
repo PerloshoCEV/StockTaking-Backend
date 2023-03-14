@@ -60,5 +60,10 @@ public class User_Service
 	{
 		return repository.findById(id);
 	}
+	
+	public Optional<T_User> findUserByEmailService(String email) 
+	{
+		return repository.findByEmail(email);
+	}
 
 }

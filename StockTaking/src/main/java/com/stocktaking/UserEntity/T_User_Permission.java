@@ -22,7 +22,7 @@ public class T_User_Permission
 	@MapsId("userId")
 	private T_User user;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("permissionId")
 	private T_Permission permission;
 	

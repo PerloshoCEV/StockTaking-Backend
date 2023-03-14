@@ -46,6 +46,15 @@ public interface User_ControllerInterface
 	T_User readUserIdController (@PathVariable Long id);
 	
 	/*
+		Método interfaz: Get Read (Por Id)
+		Recibe:
+		Objetivo:
+		Devuelve:
+	*/
+	@GetMapping(path = "/userNamePassword")
+	T_User readUserNamePasswordController (@RequestBody T_User newUser);
+	
+	/*
 		Método interfaz: Put Update
 		Recibe:
 		Objetivo:
