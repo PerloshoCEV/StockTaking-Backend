@@ -126,6 +126,11 @@ public class T_Supplier
 	public void setProducts(List<T_Product_Supplier> products) {
 		this.products = products;
 	}
-	
-	
+
+
+	public void setAll(String name, String email, String address) {
+		this.name = name;
+		this.email = email;
+		this.address = address;
+	}
 }

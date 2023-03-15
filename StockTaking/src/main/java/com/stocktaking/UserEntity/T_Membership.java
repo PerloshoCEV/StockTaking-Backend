@@ -16,7 +16,6 @@ import jakarta.persistence.Table;
 @Table(name = "T_Membership")
 public class T_Membership 
 {
-	//TODO: ASDASDASDASDSDASD
 	/*
 		Zona de Atributos
 	*/
