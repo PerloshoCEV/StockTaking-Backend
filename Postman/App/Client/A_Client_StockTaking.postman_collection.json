@@ -59,15 +59,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/stocktaking/client/1",
+					"raw": "localhost:8080/stocktaking/client?id=1552",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"stocktaking",
-						"client",
-						"1"
+						"client"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1552"
+						}
 					]
 				}
 			},
@@ -79,15 +84,20 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/stocktaking/client/1",
+					"raw": "localhost:8080/stocktaking/client?id=1552",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"stocktaking",
-						"client",
-						"1"
+						"client"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1552"
+						}
 					]
 				}
 			},
@@ -100,7 +110,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"id\": 1,\r\n\t\"name\": \"precio\",\r\n    \"description\": \"Para otorgar precio a un elemento.\"\r\n}",
+					"raw": "{\r\n\t\"id\": 1552,\r\n\t\"name\": \"Manolito\",\r\n    \"lastName\": \"Perez.\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

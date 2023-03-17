@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,8 +41,8 @@ public interface Permission_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@GetMapping(path = "/permission/{id}")
-	T_Permission readPermissionIdController (@PathVariable Long id);
+	@GetMapping(path = "/permission")
+	T_Permission readPermissionIdController (@RequestParam Long id);
 	
 	/*
 		Método interfaz: Put Update
@@ -60,6 +59,6 @@ public interface Permission_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@DeleteMapping(path = "/permission/{id}")
-	String deletePermissionId (@PathVariable Long id);
+	@DeleteMapping(path = "/permission")
+	String deletePermissionId (@RequestParam Long id);
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,8 +41,8 @@ public interface Attribute_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@GetMapping(path = "/attribute/{id}")
-	T_Attribute readAttributeIdController (@PathVariable Long id);
+	@GetMapping(path = "/attribute")
+	T_Attribute readAttributeIdController (@RequestParam Long id);
 	
 	/*
 		Método interfaz: Put Update
@@ -60,6 +59,6 @@ public interface Attribute_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@DeleteMapping(path = "/attribute/{id}")
-	String deleteAttributeId (@PathVariable Long id); 
+	@DeleteMapping(path = "/attribute")
+	String deleteAttributeId (@RequestParam Long id); 
 }

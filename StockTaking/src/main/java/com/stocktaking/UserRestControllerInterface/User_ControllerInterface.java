@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,8 +41,8 @@ public interface User_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@GetMapping(path = "/user/{id}")
-	T_User readUserIdController (@PathVariable Long id);
+	@GetMapping(path = "/user")
+	T_User readUserIdController (@RequestParam Long id);
 	
 	/*
 		Método interfaz: Get Read (Por Id)
@@ -69,6 +68,6 @@ public interface User_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@DeleteMapping(path = "/user/{id}")
-	String deleteUserId (@PathVariable Long id); 
+	@DeleteMapping(path = "/user")
+	String deleteUserId (@RequestParam Long id); 
 }

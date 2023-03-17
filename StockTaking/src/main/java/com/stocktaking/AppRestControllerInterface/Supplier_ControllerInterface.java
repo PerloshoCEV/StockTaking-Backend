@@ -32,8 +32,8 @@ public interface Supplier_ControllerInterface {
         Objetivo:
         Devuelve:
     */
-    @GetMapping(path = "/supplier/{id}")
-    T_Supplier readSupplierIdController (@PathVariable Long id);
+    @GetMapping(path = "/supplier")
+    T_Supplier readSupplierIdController (@RequestParam Long id);
 
     /*
         Método interfaz: Put Update
@@ -50,6 +50,6 @@ public interface Supplier_ControllerInterface {
         Objetivo:
         Devuelve:
     */
-    @DeleteMapping(path = "/supplier/{id}")
-    String deleteSupplierId (@PathVariable Long id);
+    @DeleteMapping(path = "/supplier")
+    String deleteSupplierId (@RequestParam Long id);
 }

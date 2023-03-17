@@ -59,15 +59,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/stocktaking/attribute/1",
+					"raw": "localhost:8080/stocktaking/attribute?id=3152",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"stocktaking",
-						"attribute",
-						"1"
+						"attribute"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3152"
+						}
 					]
 				}
 			},
@@ -79,15 +84,20 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/stocktaking/attribute/1",
+					"raw": "localhost:8080/stocktaking/attribute?id=3152",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"stocktaking",
-						"attribute",
-						"1"
+						"attribute"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3152"
+						}
 					]
 				}
 			},
