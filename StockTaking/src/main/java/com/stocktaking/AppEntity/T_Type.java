@@ -111,6 +111,10 @@ public class T_Type
 	public void setAttributes(List<T_Type_Attribute> attributes) {
 		this.attributes = attributes;
 	}
-	
-	
+
+
+    public void setAll(String name, String description) {
+		this.name = name;
+		this.description = description;
+    }
 }
