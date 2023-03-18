@@ -89,11 +89,11 @@ public class Client_Controller implements Client_ControllerInterface
 			if (clientService.findClientByIdService(id).isPresent())
 			{
 				clientService.deleteClientId(id);
-				stringToReturn = "Usuario eliminado correctamente";
+				stringToReturn = "Cliente eliminado correctamente";
 			}
 			else
 			{
-				stringToReturn = "Usuario con ID " + id + " no existe";
+				stringToReturn = "Cliente con ID " + id + " no existe";
 			}
 		}
 		else

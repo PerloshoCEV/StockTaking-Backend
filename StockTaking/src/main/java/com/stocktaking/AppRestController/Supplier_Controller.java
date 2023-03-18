@@ -89,11 +89,11 @@ public class Supplier_Controller implements Supplier_ControllerInterface {
             if (supplierService.findSupplierByIdService(id).isPresent())
             {
                 supplierService.deleteSupplierId(id);
-                stringToReturn = "Usuario eliminado correctamente";
+                stringToReturn = "Proveedor eliminado correctamente";
             }
             else
             {
-                stringToReturn = "Usuario con ID " + id + " no existe";
+                stringToReturn = "Proveedor con ID " + id + " no existe";
             }
         }
         else

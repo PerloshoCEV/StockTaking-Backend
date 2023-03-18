@@ -91,11 +91,11 @@ public class Attribute_Controller implements Attribute_ControllerInterface
 			if (attributeService.findAttributeByIdService(id).isPresent())
 			{
 				attributeService.deleteAttributeId(id);
-				stringToReturn = "Usuario eliminado correctamente";
+				stringToReturn = "Atributo eliminado correctamente";
 			}
 			else
 			{
-				stringToReturn = "Usuario con ID " + id + " no existe";
+				stringToReturn = "Atributo con ID " + id + " no existe";
 			}
 		}
 		else
