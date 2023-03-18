@@ -89,11 +89,11 @@ public class Type_Controller implements Type_ControllerInterface
             if (typeService.findTypeByIdService(id).isPresent())
             {
                 typeService.deleteTypeId(id);
-                stringToReturn = "Usuario eliminado correctamente";
+                stringToReturn = "Tipo eliminado correctamente";
             }
             else
             {
-                stringToReturn = "Usuario con ID " + id + " no existe";
+                stringToReturn = "Tipo con ID " + id + " no existe";
             }
         }
         else
