@@ -35,7 +35,7 @@ public interface User_ControllerInterface
 	Long LogInController(@RequestParam String email,@RequestParam String password);
 
 	@PostMapping(path = "/signup")
-	Long SignUpController(T_User newUser);
+	Long SignUpController(@RequestParam String email,@RequestParam String password);
 
 	/*
                 Método interfaz: Get Read (All)
@@ -61,9 +61,6 @@ public interface User_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
-	@GetMapping(path = "/userEmailPassword")
-	T_User readUserEmailPasswordController (@RequestBody T_User newUser);
-	
 	/*
 		Método interfaz: Put Update
 		Recibe:

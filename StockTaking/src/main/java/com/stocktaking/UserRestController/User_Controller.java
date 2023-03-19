@@ -1,9 +1,11 @@
 package com.stocktaking.UserRestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import com.stocktaking.StocktakingEnums;
+import com.stocktaking.UserEntity.T_Membership;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,12 +26,11 @@ public class User_Controller implements User_ControllerInterface
 
 	@Override
 	public Long createUserController(T_User newUser) {
-		return null;
+		return userService.createUserService(newUser);
 	}
-
 	/*
             Zona de Constructor
-        */
+    */
 	@Override
 	public Long LogInController(String email, String password)
 	{
@@ -41,12 +42,22 @@ public class User_Controller implements User_ControllerInterface
 	}
 
 	@Override
-	public Long SignUpController(T_User newUser)
+	public Long SignUpController(String email, String password)
 	{
-		var user = userService.findUserByEmailService(newUser.getEmail());
+		var user = userService.findUserByEmailService(email);
 		if(user.isPresent()){
 			return (long) StocktakingEnums.MessageResult.UserExist.ordinal();
 		}
+
+		T_User newUser = new T_User();
+		newUser.setAll("",
+				"",
+				"",
+				email,
+				0,
+				password,
+				null);
+		newUser.setPermissions(new ArrayList<>());
 		userService.createUserService(newUser);
 		return (long) StocktakingEnums.MessageResult.Success.ordinal();
 	}
@@ -77,54 +88,12 @@ public class User_Controller implements User_ControllerInterface
 		}
 		return userToReturn;
 	}
-	
-	@Override
-	public T_User readUserEmailPasswordController(T_User newUser) 
-	{
-		T_User userToReturn = null;
-		if
-		(
-			(newUser.getEmail() != "" || newUser.getEmail() != null)
-			&&
-			(newUser.getPassword() != "" || newUser.getPassword() != null)
-		)
-		{
-			Optional<T_User> userEmailExist = null;
-			userEmailExist = userService.findUserByEmailService(newUser.getEmail());
-			if(userEmailExist.isPresent()) // Si el Email existe:
-			{
-				Optional<T_User> userPasswordExist = null;
-				userPasswordExist = userService.findUserByEmailPasswordService(newUser.getEmail(), newUser.getPassword());
-				if(userPasswordExist.isPresent()) // Si el email y contraseña coincide
-				{
-					userToReturn = userPasswordExist.get();
-				}
-				else
-				{
-					// Lanzar error: El login no es correcto.
-				}
-			}
-			else
-			{
-				//Lanzar error: El Email no existe.
-			}
-		}
-		else
-		{
-			
-		}
-		return userToReturn;
-	}
 
 	@Override
 	public T_User updateUserController(T_User user) 
 	{
 		T_User userToReturn = null;
-		
-		
 		userToReturn = userService.updateUser(user);
-		
-		
 		return userToReturn;
 	}
 
