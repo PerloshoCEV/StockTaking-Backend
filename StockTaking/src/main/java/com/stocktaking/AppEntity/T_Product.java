@@ -126,6 +126,12 @@ public class T_Product
 	public void setSuppliers(List<T_Product_Supplier> suppliers) {
 		this.suppliers = suppliers;
 	}
+
+    public void setAll(String name, Integer stock) {
+		this.name = name;
+		this.stock = stock;
+
+    }
 	
 	
 }
