@@ -3,6 +3,8 @@ package com.stocktaking.AppEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.NaturalId;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,11 +25,12 @@ public class T_Attribute
 	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Name", nullable = false)
+	@NaturalId
+	@Column (name = "Name", unique = true, nullable = false)
 	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Description", nullable = false)
+	@Column (name = "Description",  unique = false, nullable = false)
 	String description;
 	
 	@OneToMany(mappedBy = "attribute")

@@ -28,7 +28,8 @@ public class T_Type_Attribute
 	/*
 		Zona de Constructores
 	*/
-	public T_Type_Attribute() {
+	public T_Type_Attribute() 
+	{
 		super();
 	}
 	
@@ -73,8 +74,4 @@ public class T_Type_Attribute
 	public void setAttribute(T_Attribute attribute) {
 		this.attribute = attribute;
 	}
-
-	
-	
-	
 }

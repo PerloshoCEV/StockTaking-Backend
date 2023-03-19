@@ -2,6 +2,8 @@ package com.stocktaking.UserEntity;
 
 import java.util.List;
 
+import org.hibernate.annotations.NaturalId;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -24,11 +26,12 @@ public class T_Membership
 	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Name", nullable = false)
+	@Column (name = "Name", unique = true, nullable = false)
+	@NaturalId
 	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Price", nullable = false)
+	@Column (name = "Price", unique = false, nullable = false)
 	Double price;
 	
 	@OneToMany(mappedBy = "membership")
@@ -38,24 +41,28 @@ public class T_Membership
 	/*
 		Zona de Constructores
 	*/
-	public T_Membership() {
+	public T_Membership() 
+	{
 		super();
 	}
 
-	public T_Membership(String name, Double price) {
+	public T_Membership(String name, Double price) 
+	{
 		super();
 		this.name = name;
 		this.price = price;
 	}
 	
-	public T_Membership(Long id, String name, Double price) {
+	public T_Membership(Long id, String name, Double price) 
+	{
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 	}
 
-	public T_Membership(Long id, String name, Double price, List<T_User> users) {
+	public T_Membership(Long id, String name, Double price, List<T_User> users) 
+	{
 		super();
 		this.id = id;
 		this.name = name;

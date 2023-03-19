@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import org.hibernate.annotations.NaturalId;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
@@ -27,27 +29,28 @@ public class T_User
 	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Name", nullable = true)
+	@Column (name = "Name", unique = false, nullable = true)
 	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "LastName", nullable = true)
+	@Column (name = "LastName", unique = false, nullable = true)
 	String lastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "SecondLastName", nullable = true)
+	@Column (name = "SecondLastName", unique = false, nullable = true)
 	String secondLastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Email", nullable = false)
+	@Column (name = "Email", unique = true, nullable = false)
+	@NaturalId
 	String email;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Age", nullable = true)
+	@Column (name = "Age", unique = false, nullable = true)
 	Integer age;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Password", nullable = false)
+	@Column (name = "Password", unique = false, nullable = false)
 	String password;
 	
 	@ManyToOne()

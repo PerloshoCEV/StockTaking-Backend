@@ -3,6 +3,8 @@ package com.stocktaking.AppEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.NaturalId;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
@@ -26,11 +28,16 @@ public class T_Product
 	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Name", nullable = false)
+	@Column (name = "Name", unique = true, nullable = false)
+	@NaturalId
 	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Stock", nullable = false)
+	@Column (name = "Description", unique = false, nullable = true)
+	String description;
+	
+	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
+	@Column (name = "Stock", unique = false, nullable = false)
 	Integer stock;
 	
 	@ManyToOne()
@@ -46,18 +53,21 @@ public class T_Product
 	/*
 		Zona de Constructores
 	*/
-	public T_Product() {
+	public T_Product() 
+	{
 		super();
 	}
 
-	public T_Product(String name, Integer stock, T_Type type) {
+	public T_Product(String name, Integer stock, T_Type type) 
+	{
 		super();
 		this.name = name;
 		this.stock = stock;
 		this.type = type;
 	}
 	
-	public T_Product(Long id, String name, Integer stock, T_Type type) {
+	public T_Product(Long id, String name, Integer stock, T_Type type) 
+	{
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,8 +75,10 @@ public class T_Product
 		this.type = type;
 	}
 
-	public T_Product(Long id, String name, Integer stock, T_Type type, List<T_Product_Client> clients,
-			List<T_Product_Supplier> suppliers) {
+	public T_Product(Long id, String name, Integer stock, T_Type type, 
+			List<T_Product_Client> clients,
+			List<T_Product_Supplier> suppliers) 
+	{
 		super();
 		this.id = id;
 		this.name = name;

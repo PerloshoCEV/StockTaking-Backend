@@ -23,19 +23,19 @@ public class T_Client
 	Long id; // Variable - Atributo / Campo -> id (Primary Key).
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Name", nullable = false)
+	@Column (name = "Name", unique = false, nullable = false)
 	String name;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "LastName", nullable = false)
+	@Column (name = "LastName", unique = false, nullable = false)
 	String lastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "SecondLastName", nullable = true)
+	@Column (name = "SecondLastName", unique = false, nullable = true)
 	String secondLastName;
 	
 	// Spring JPA le dice al Gestor de Bases de Datos que la siguiente variable Java será un Atributo / Campo de la entidad.
-	@Column (name = "Age", nullable = true)
+	@Column (name = "Age", unique = false, nullable = true)
 	String age;
 	
 	@OneToMany(mappedBy = "client")
@@ -44,11 +44,13 @@ public class T_Client
 	/*
 		Zona de Constructores
 	*/
-	public T_Client() {
+	public T_Client() 
+	{
 		super();
 	}
 	
-	public T_Client(String name, String lastName, String secondLastName, String age) {
+	public T_Client(String name, String lastName, String secondLastName, String age) 
+	{
 		super();
 		this.name = name;
 		this.lastName = lastName;
@@ -56,7 +58,8 @@ public class T_Client
 		this.age = age;
 	}
 	
-	public T_Client(Long id, String name, String lastName, String secondLastName, String age) {
+	public T_Client(Long id, String name, String lastName, String secondLastName, String age) 
+	{
 		super();
 		this.id = id;
 		this.name = name;
@@ -64,8 +67,10 @@ public class T_Client
 		this.secondLastName = secondLastName;
 		this.age = age;
 	}
+	
 	public T_Client(Long id, String name, String lastName, String secondLastName, String age,
-			List<T_Product_Client> products) {
+			List<T_Product_Client> products) 
+	{
 		super();
 		this.id = id;
 		this.name = name;
