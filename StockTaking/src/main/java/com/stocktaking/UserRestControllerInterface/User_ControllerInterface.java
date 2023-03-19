@@ -23,15 +23,26 @@ public interface User_ControllerInterface
 		Objetivo:
 		Devuelve:
 	*/
+
+
 	@PostMapping(path = "/user")
 	Long createUserController (@RequestBody T_User newUser);
-	
+
 	/*
-		Método interfaz: Get Read (All)
-		Recibe:
-		Objetivo:
-		Devuelve:
+		Zona de Constructor
 	*/
+	@GetMapping(path = "/login")
+	Long LogInController(@RequestParam String email,@RequestParam String password);
+
+	@PostMapping(path = "/signup")
+	Long SignUpController(T_User newUser);
+
+	/*
+                Método interfaz: Get Read (All)
+                Recibe:
+                Objetivo:
+                Devuelve:
+            */
 	@GetMapping(path = "/users")
 	List<T_User> readUserAllController ();
 	

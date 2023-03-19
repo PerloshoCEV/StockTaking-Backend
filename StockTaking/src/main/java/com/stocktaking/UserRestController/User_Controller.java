@@ -3,6 +3,7 @@ package com.stocktaking.UserRestController;
 import java.util.List;
 import java.util.Optional;
 
+import com.stocktaking.StocktakingEnums;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,26 +22,35 @@ public class User_Controller implements User_ControllerInterface
 		super();
 	}
 
-	/*
-		Zona de Constructor
-	*/
 	@Override
-	public Long createUserController(T_User newUser) 
-	{
-		if (newUser != null)
-		{
-			// Si no tiene id
-			if(newUser.getId() == null)
-			{
-				return userService.createUserService(newUser);
-			}
-			else
-			{
-				
-			}
-		}
+	public Long createUserController(T_User newUser) {
 		return null;
 	}
+
+	/*
+            Zona de Constructor
+        */
+	@Override
+	public Long LogInController(String email, String password)
+	{
+		var user = userService.findUserByEmailPasswordService(email, password);
+		if(user.isPresent()){
+			return (long) StocktakingEnums.MessageResult.Success.ordinal();
+		}
+		return (long) StocktakingEnums.MessageResult.Error.ordinal();
+	}
+
+	@Override
+	public Long SignUpController(T_User newUser)
+	{
+		var user = userService.findUserByEmailService(newUser.getEmail());
+		if(user.isPresent()){
+			return (long) StocktakingEnums.MessageResult.UserExist.ordinal();
+		}
+		userService.createUserService(newUser);
+		return (long) StocktakingEnums.MessageResult.Success.ordinal();
+	}
+
 
 	/*
 		Zona de implementaciones
