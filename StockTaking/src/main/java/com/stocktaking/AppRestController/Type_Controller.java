@@ -4,6 +4,8 @@ package com.stocktaking.AppRestController;
 import com.stocktaking.AppEntity.T_Type;
 import com.stocktaking.AppRestControllerInterface.Type_ControllerInterface;
 import com.stocktaking.AppService.Type_Service;
+import com.stocktaking.Response.DeleteResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -80,26 +82,26 @@ public class Type_Controller implements Type_ControllerInterface
     }
 
     @Override
-    public String deleteTypeId(Long id)
+    public DeleteResponse deleteTypeId(Long id)
     {
-        String stringToReturn = "";
-
+        DeleteResponse deleteResponse = new DeleteResponse();
+        
         if(id != null)
         {
             if (typeService.findTypeByIdService(id).isPresent())
             {
                 typeService.deleteTypeId(id);
-                stringToReturn = "Tipo eliminado correctamente";
+                deleteResponse.response = "Tipo eliminado correctamente";
             }
             else
             {
-                stringToReturn = "Tipo con ID " + id + " no existe";
+                deleteResponse.response = "Tipo con ID " + id + " no existe";
             }
         }
         else
         {
 
         }
-        return stringToReturn;
+        return deleteResponse;
     }
 }

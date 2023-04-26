@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stocktaking.AppEntity.T_Type;
+import com.stocktaking.Response.DeleteResponse;
 
 @RequestMapping("/stocktaking")
 public interface Type_ControllerInterface
@@ -58,6 +59,6 @@ public interface Type_ControllerInterface
         Devuelve:
     */
     @DeleteMapping(path = "/type")
-    String deleteTypeId (@RequestParam Long id);
+    DeleteResponse deleteTypeId (@RequestParam Long id);
 }
 
