@@ -7,6 +7,7 @@ import java.util.List;
 import org.hibernate.annotations.NaturalId;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -58,6 +59,7 @@ public class T_User
 	T_Membership membership;
 	
 	@OneToMany(mappedBy = "user")
+	@JsonIgnoreProperties("user")
 	List<T_User_Permission> permissions = new ArrayList<>();
 
 	/*

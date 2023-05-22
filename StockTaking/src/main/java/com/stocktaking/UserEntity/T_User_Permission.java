@@ -1,5 +1,7 @@
 package com.stocktaking.UserEntity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -18,10 +20,12 @@ public class T_User_Permission
 	@EmbeddedId
 	private EmbKey_User_Permission id;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("userId")
 	private T_User user;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("permissionId")
 	private T_Permission permission;
